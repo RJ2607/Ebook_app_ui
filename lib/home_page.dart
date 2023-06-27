@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             return Container(
                               height: 180,
                               width: MediaQuery.of(context).size.width,
+                              margin: EdgeInsets.only(right: 15),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 image: DecorationImage(
