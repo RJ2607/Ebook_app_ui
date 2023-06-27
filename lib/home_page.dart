@@ -49,27 +49,32 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Container(
+                height: 180,
                 child: Stack(children: [
-              Positioned(
-                child: Container(
-                  height: 180,
-                  child: PageView.builder(
-                      controller: PageController(viewportFraction: 0.8),
-                      itemCount: 5,
-                      itemBuilder: (_, i) {
-                        return Container(
-                          height: 180,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            image: DecorationImage(
-                              image: AssetImage('img/990130.jpg'),
-                            ),
-                          ),
-                        );
-                      }),
-                ),
-              )
-            ]))
+                  Positioned(
+                    top: 0,
+                    left: -25,
+                    right: 0,
+                    child: Container(
+                      height: 180,
+                      child: PageView.builder(
+                          controller: PageController(viewportFraction: 0.8),
+                          itemCount: 5,
+                          itemBuilder: (_, i) {
+                            return Container(
+                              height: 180,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                    image: AssetImage('img/990130.jpg'),
+                                    fit: BoxFit.fill),
+                              ),
+                            );
+                          }),
+                    ),
+                  )
+                ]))
           ],
         ),
       )),
