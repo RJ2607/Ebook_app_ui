@@ -49,23 +49,27 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Container(
-              height: 180,
-              child: PageView.builder(
-                  controller: PageController(viewportFraction: 0.8),
-                  itemCount: 5,
-                  itemBuilder: (_, i) {
-                    return Container(
-                      height: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        image: DecorationImage(
-                          image:
-                              AssetImage('img/Naruto and Sasuke as kids.jpeg'),
-                        ),
-                      ),
-                    );
-                  }),
-            )
+                child: Stack(children: [
+              Positioned(
+                child: Container(
+                  height: 180,
+                  child: PageView.builder(
+                      controller: PageController(viewportFraction: 0.8),
+                      itemCount: 5,
+                      itemBuilder: (_, i) {
+                        return Container(
+                          height: 180,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            image: DecorationImage(
+                              image: AssetImage('img/990130.jpg'),
+                            ),
+                          ),
+                        );
+                      }),
+                ),
+              )
+            ]))
           ],
         ),
       )),
