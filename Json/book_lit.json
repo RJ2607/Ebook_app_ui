@@ -1,5 +1,16 @@
 [
     {
-        "rating":"4.5"
+        "rating":"5",
+        "title":"Teri Choodiyon Ki",
+        "text":"BCS Ragasur",
+        "img":"img/Naruto and Sasuke as kids.jpeg",
+        "audio":"assets/BCS Ragasur - Teri Choodiyon Ki (Official Music Video) _ Addiction Alert _ Teri Chu diyon ki.mp3"
+    },
+    {
+        "rating":"3",
+        "title":"Breakup Party",
+        "text":"Yo Yo Honey singh",
+        "img":"img/Team 7_.jpeg",
+        "audio":"assets/Breakup Party - Upar Upar In The Air - Yo Yo Honey Singh - Leo - New Song 2016.mp3"        
     }
 ]
