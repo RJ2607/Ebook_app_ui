@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
+            SizedBox(height: 20),
             Container(
                 height: 180,
                 child: Stack(children: [
