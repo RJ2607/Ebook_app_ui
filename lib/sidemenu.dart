@@ -8,7 +8,7 @@ class SideMenu extends StatefulWidget {
   @override
   State<SideMenu> createState() => _SideMenuState();
 }
-//try scaffold 
+//try scaffold
 
 class _SideMenuState extends State<SideMenu> {
   @override
