@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:animation_widget/app_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/cupertino.dart';
-import 'colors_ui.dart' as AppColors;
+import 'colors_ui.dart' as colors_ui;
+import 'app_tabs.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  late List books;
+  List? books;
 
   late ScrollController _scrollController;
   late TabController _tabController;
@@ -40,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.background,
+      color: colors_ui.background,
       child: SafeArea(
           child: Scaffold(
         body: Column(
@@ -85,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage>
                       height: 180,
                       child: PageView.builder(
                           controller: PageController(viewportFraction: 0.8),
-                          itemCount: books == null ? 0 : books.length,
+                          itemCount: books == null ? 0 : books!.length,
                           itemBuilder: (_, i) {
                             return Container(
                               height: 180,
@@ -94,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage>
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 image: DecorationImage(
-                                    image: AssetImage(books[i]["img"]),
+                                    image: AssetImage(books![i]["img"]),
                                     fit: BoxFit.fill),
                               ),
                             );
@@ -108,15 +110,16 @@ class _MyHomePageState extends State<MyHomePage>
               headerSliverBuilder: (BuildContext context, bool isScroll) {
                 return [
                   SliverAppBar(
+                    backgroundColor: colors_ui.silverbackground,
                     pinned: true,
                     bottom: PreferredSize(
                       preferredSize: Size.fromHeight(50),
                       child: Container(
-                        margin: const EdgeInsets.all(0),
+                        margin: const EdgeInsets.only(bottom: 20),
                         child: TabBar(
                           indicatorPadding: const EdgeInsets.all(0),
                           indicatorSize: TabBarIndicatorSize.label,
-                          labelPadding: const EdgeInsets.all(0),
+                          labelPadding: const EdgeInsets.only(left: 10),
                           controller: _tabController,
                           isScrollable: true,
                           indicator: BoxDecoration(
@@ -129,51 +132,10 @@ class _MyHomePageState extends State<MyHomePage>
                                 )
                               ]),
                           tabs: [
-                            Container(
-                              width: 120,
-                              height: 50,
-                              child: Text("New",
-                                  style: TextStyle(color: Colors.white)),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      blurRadius: 7,
-                                      offset: Offset(0, 0),
-                                    )
-                                  ]),
-                            ),
-                            Container(
-                              width: 120,
-                              height: 50,
-                              child: Text("New",
-                                  style: TextStyle(color: Colors.white)),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      blurRadius: 7,
-                                      offset: Offset(0, 0),
-                                    )
-                                  ]),
-                            ),
-                            Container(
-                              width: 120,
-                              height: 50,
-                              child: Text("New",
-                                  style: TextStyle(color: Colors.white)),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      blurRadius: 7,
-                                      offset: Offset(0, 0),
-                                    )
-                                  ]),
-                            ),
+                            AppTab(color: colors_ui.menu1color, text: "new"),
+                            AppTab(
+                                color: colors_ui.menu2color, text: "popular"),
+                            AppTab(color: colors_ui.menu3color, text: "free"),
                           ],
                         ),
                       ),
