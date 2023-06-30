@@ -132,10 +132,11 @@ class _MyHomePageState extends State<MyHomePage>
                                 )
                               ]),
                           tabs: [
-                            AppTab(color: colors_ui.menu1color, text: "new"),
+                            AppTab(color: colors_ui.menu1color, text: "New"),
                             AppTab(
-                                color: colors_ui.menu2color, text: "popular"),
-                            AppTab(color: colors_ui.menu3color, text: "free"),
+                                color: colors_ui.menu2color, text: "Popular"),
+                            AppTab(
+                                color: colors_ui.menu3color, text: "Trending"),
                           ],
                         ),
                       ),

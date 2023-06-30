@@ -13,7 +13,9 @@ class AppTab extends StatelessWidget {
     return Container(
       width: 105,
       height: 50,
-      child: Text(this.text, style: TextStyle(color: Colors.white)),
+      child: Text(this.text,
+          style:
+              TextStyle(color: Color.fromARGB(255, 49, 47, 47), fontSize: 18)),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: this.color,
