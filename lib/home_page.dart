@@ -52,7 +52,10 @@ class _MyHomePageState extends State<MyHomePage>
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(CupertinoIcons.square_split_2x2_fill, size: 30),
+                  IconButton(
+                      onPressed: () {},
+                      icon:
+                          Icon(CupertinoIcons.square_split_2x2_fill, size: 30)),
                   Row(
                     children: [
                       Icon(CupertinoIcons.search, size: 25),
