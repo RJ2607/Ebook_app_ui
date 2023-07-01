@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:animation_widget/app_tabs.dart';
+import 'package:animation_widget/sidemenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -53,7 +54,12 @@ class _MyHomePageState extends State<MyHomePage>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return SideMenu();
+                        }));
+                      },
                       icon:
                           Icon(CupertinoIcons.square_split_2x2_fill, size: 30)),
                   Row(
