@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
-  //final double value = 0;
+  static double value = 0;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -20,7 +20,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   List? books;
-  double value = 0;
+  //double value = 0;
 
   late ScrollController _scrollController;
   late TabController _tabController;
@@ -60,7 +60,9 @@ class _MyHomePageState extends State<MyHomePage>
                   IconButton(
                       onPressed: () {
                         setState(() {
-                          value == 0 ? value = 1 : value = 0;
+                          MyHomePage.value == 0
+                              ? MyHomePage.value = 1
+                              : MyHomePage.value = 0;
                         });
                       },
                       icon:

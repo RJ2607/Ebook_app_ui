@@ -9,14 +9,13 @@ import 'dart:math';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({super.key});
-
   @override
   State<SideMenu> createState() => _SideMenuState();
 }
 //try scaffold
 
 class _SideMenuState extends State<SideMenu> {
-  double value = MyHomePage().Value();
+  //double value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +44,10 @@ class _SideMenuState extends State<SideMenu> {
                     width: 100,
                     child: TextButton.icon(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return MyHomePage();
-                        }));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyHomePage()),
+                        );
                       },
                       icon: Icon(
                         CupertinoIcons.home,
@@ -66,7 +65,7 @@ class _SideMenuState extends State<SideMenu> {
             )),
           ),
           TweenAnimationBuilder(
-              tween: Tween<double>(begin: 0, end: value),
+              tween: Tween<double>(begin: 0, end: MyHomePage.value),
               duration: Duration(milliseconds: 500),
               curve: Curves.easeInExpo,
               builder: (_, double val, __) {
