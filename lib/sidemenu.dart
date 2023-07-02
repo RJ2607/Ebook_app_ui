@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'home_page.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'dart:math';
 
 class SideMenu extends StatefulWidget {
@@ -15,7 +16,7 @@ class SideMenu extends StatefulWidget {
 //try scaffold
 
 class _SideMenuState extends State<SideMenu> {
-  double value = 0;
+  double value = MyHomePage().Value();
 
   @override
   Widget build(BuildContext context) {
@@ -70,15 +71,12 @@ class _SideMenuState extends State<SideMenu> {
               curve: Curves.easeInExpo,
               builder: (_, double val, __) {
                 return (Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..setEntry(0, 3, 200 * val)
-                    ..rotateY((pi / 6) * val),
-                  child: Scaffold(
-                    body: MyHomePage(),
-                  ),
-                ));
+                    alignment: Alignment.center,
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.001)
+                      ..setEntry(0, 3, 200 * val)
+                      ..rotateY((pi / 6) * val),
+                    child: Scaffold(body: MyHomePage())));
               }),
         ],
       ),

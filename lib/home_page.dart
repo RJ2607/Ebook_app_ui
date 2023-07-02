@@ -7,9 +7,11 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/cupertino.dart';
 import 'colors_ui.dart' as colors_ui;
 import 'app_tabs.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
+  //final double value = 0;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -18,10 +20,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   List? books;
+  double value = 0;
 
   late ScrollController _scrollController;
   late TabController _tabController;
-  double value = 0;
+
   ReadData() async {
     await DefaultAssetBundle.of(context)
         .loadString("Json/book_lit.json")
