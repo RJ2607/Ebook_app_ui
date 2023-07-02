@@ -21,6 +21,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   late ScrollController _scrollController;
   late TabController _tabController;
+  double value = 0;
   ReadData() async {
     await DefaultAssetBundle.of(context)
         .loadString("Json/book_lit.json")
@@ -55,10 +56,9 @@ class _MyHomePageState extends State<MyHomePage>
                 children: [
                   IconButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return SideMenu();
-                        }));
+                        setState(() {
+                          value == 0 ? value = 1 : value = 0;
+                        });
                       },
                       icon:
                           Icon(CupertinoIcons.square_split_2x2_fill, size: 30)),
