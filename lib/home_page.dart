@@ -59,14 +59,13 @@ class _MyHomePageState extends State<MyHomePage>
                 children: [
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          MyHomePage.value == 0
-                              ? MyHomePage.value = 1
-                              : MyHomePage.value = 0;
-                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SideMenu()),
+                        );
                       },
-                      icon:
-                          Icon(CupertinoIcons.square_split_2x2_fill, size: 30)),
+                      icon: Icon(CupertinoIcons.person_crop_circle_fill,
+                          size: 30, color: Colors.black)),
                   Row(
                     children: [
                       Icon(CupertinoIcons.search, size: 25),

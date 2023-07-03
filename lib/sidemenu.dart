@@ -77,6 +77,19 @@ class _SideMenuState extends State<SideMenu> {
                       ..rotateY((pi / 6) * val),
                     child: Scaffold(body: MyHomePage())));
               }),
+          GestureDetector(
+            onHorizontalDragUpdate: (e) {
+              if (e.delta.dx > 0) {
+                setState(() {
+                  MyHomePage.value = 1;
+                });
+              } else {
+                setState(() {
+                  MyHomePage.value = 0;
+                });
+              }
+            },
+          )
         ],
       ),
     );
