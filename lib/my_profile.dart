@@ -26,9 +26,18 @@ class _MyProfileState extends State<MyProfile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
-                      radius: 80,
-                      backgroundImage: AssetImage('assets/990130.jpg'),
-                    )
+                        radius: 70,
+                        backgroundImage: AssetImage("img/990130.jpg"),
+                        child: Stack(children: [
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: CircleAvatar(
+                              radius: 22,
+                              backgroundColor: Colors.white70,
+                              child: Icon(CupertinoIcons.camera),
+                            ),
+                          ),
+                        ]))
                   ],
                 ),
               ),
