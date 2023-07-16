@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:animation_widget/app_tabs.dart';
+import 'package:animation_widget/my_profile.dart';
 import 'package:animation_widget/sidemenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage>
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SideMenu()),
+                          MaterialPageRoute(builder: (context) => MyProfile()),
                         );
                       },
                       icon: Icon(CupertinoIcons.person_crop_circle_fill,
